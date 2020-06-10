@@ -40,7 +40,7 @@ export default function TeamSection() {
                 <img src={team1} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                D.I. Lee
+                Student A
                 <br />
               </h4>
               <CardBody>
@@ -56,7 +56,7 @@ export default function TeamSection() {
                 <img src={team2} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                Student A
+                D.I. Lee
                 <br />
               </h4>
               <CardBody>
