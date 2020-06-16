@@ -1,6 +1,9 @@
 {
   "name": "essay_material_express",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.x"
+  }
   "description": "",
   "main": ".eslintrc.js",
   "scripts": {
