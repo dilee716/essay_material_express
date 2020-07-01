@@ -6,13 +6,15 @@ module.exports = {
     main: './client/src/index.js'
   },
   module:{
-    rules:[
+    rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules)/,
-        use:[
-          'babel-loader'
-        ]
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        query:
+        {
+          presets:['@babel/react']
+        },
       },
       {
         test: /\.html$/,
