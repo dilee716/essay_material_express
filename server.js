@@ -11,7 +11,6 @@ app.get('/express_backend', (req, res) => {
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
 });
 
-
 app.get('/', function (req, res) {
   res.render('index.html');
 });
