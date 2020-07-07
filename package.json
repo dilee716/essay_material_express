@@ -8,7 +8,7 @@
   "main": ".eslintrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open --mode development",
+    "start": "node server.js",
     "build": "webpack --mode production"
   },
   "keywords": [],

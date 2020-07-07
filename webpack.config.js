@@ -42,8 +42,16 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    overlay:true,
+    contentBase: "./build",
+    hot: true
+  },
   resolve: {
     extensions: ['*', '.js', '.jsx']
+  },
+  optimization: {
+    minimize: false
   },
   output: {
     filename: 'main.js',

@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 app.engine('html', require('ejs').renderFile);
+app.use(express.static('views'));
 const port = process.env.PORT || 5000;
 
 // console.log that your server is up and running
