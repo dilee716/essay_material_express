@@ -6,11 +6,26 @@ const port = process.env.PORT || 5000;
 
 const stripe = require('stripe')('sk_test_51H4TqMCUChgYYpJHoIoxwatxynwWVNVPSAXgcJh53KJfP7sI4pk13bVNb82eKxfXQZqtPow8CFFLUmcmnd8IGAYk005NPLX37Y');
 
-const paymentIntent = await stripe.paymentIntents.create({
-  amount: 1099,
-  currency: 'usd',
-  // Verify your integration in this guide by including this parameter
-  metadata: {integration_check: 'accept_a_payment'},
+const calculateOrderAmount = items => {
+  // Replace this constant with a calculation of the order's amount
+  // Calculate the order total on the server to prevent
+  // people from directly manipulating the amount on the client
+  return 1400;
+};
+
+app.post("/create-payment-intent", async (req, res) => {
+  const { items, currency } = req.body;
+  // Create a PaymentIntent with the order amount and currency
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: calculateOrderAmount(items),
+    currency: currency
+  });
+
+  // Send publishable key and PaymentIntent details to client
+  res.send({
+    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+    clientSecret: paymentIntent.client_secret
+  });
 });
 
 app.get('/secret', async (req, res) => {

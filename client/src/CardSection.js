@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import {CardElement} from '@stripe/react-stripe-js';
-import './assets/css/CardSectionStyles.css'
+// import './assets/css/CardSectionStyles.css'
 
 const CARD_ELEMENT_OPTIONS = {
   style: {
